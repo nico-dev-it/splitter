@@ -1,0 +1,380 @@
+$text-color: #f2efeaff;
+$blue-gray: #7796CB;
+$light-blue-gray: #7796cb6e;
+$outrageous-orange: #fc7753ff;
+$dark-green: #708b75ff;
+$background-dark: #403d58ff;
+
+@mixin centeredSection {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin input {
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: 5px;
+  font-family: 'Arvo', serif;
+  color: $text-color;
+  padding: 5px;
+}
+
+@mixin input-focus {
+  input[type=number]:focus {
+    background-color: $outrageous-orange;
+    color: $text-color;
+    @include input;
+  }
+}
+
+@mixin displayAmount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body {
+  background-color: $background-dark;
+  font-family: 'Arvo', serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: $text-color;
+}
+
+.body.light {
+  transition: 0.5s;
+  background-color: $light-blue-gray;
+  .title, footer {
+    color: $background-dark;
+  }
+  #toggleLight {
+    display: none;
+  }
+  .theme {
+    button {
+      background-color: transparent;
+      position: absolute;
+      right: 5%;
+    }
+  }
+  .tipBox, .tipBoxCustom input, .totalDisplayContainer{
+    background-color: $background-dark;
+  }
+}
+
+.theme button {
+  position: absolute;
+  right: 5%;
+  height: 40px;
+  border: none;
+  background-color: $background-dark;
+  img {
+    height: 40px;
+  }
+}
+.header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  margin-top: 30px
+}
+
+.line {
+  width: 55px;
+  border-bottom: 5px solid $outrageous-orange;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+}
+
+.mainContainer {
+  background-color: $text-color;
+  color: $blue-gray;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  padding: 20px;
+  border-radius: 30px;
+  width: 700px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+}
+
+.bill {
+  width: 50%;
+}
+
+.billAmountContainer {
+  @include centeredSection;
+  img {
+    position: absolute;
+    top: 75px;
+    left: 25px;
+    height: 35px;
+  }
+}
+
+.billAmountContainer {
+  ::placeholder {
+   color: $text-color;
+  }
+}
+
+.amountContainer {
+  input {
+    background-color: $light-blue-gray;
+    height: 35px;
+    width: 90%;
+    border: none;
+    border-radius: 10px;
+    text-align: end;
+    margin-left: 7px;
+    @include input;
+  }
+
+  @include input-focus
+}
+
+.tipContainer {
+  @include centeredSection;
+  width: 95%;
+}
+
+.tipBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $dark-green;
+  border-radius: 10px;
+  color: $text-color;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  &:hover {
+    background-color: $light-blue-gray;
+    color: $background-dark;
+    transition: 1s;
+    cursor: pointer;
+  }
+}
+
+
+.tipBoxCustom {
+  input {
+    @include input;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $dark-green;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    width: 200px;
+    height: 50px;
+    text-align: end;
+    margin-top: 5px;
+    margin-left: 7px;
+  }
+
+  ::placeholder {
+    color: $text-color
+  }
+
+  @include input-focus
+}
+
+.tipOptionsContainer {
+  display: flex;
+}
+
+input[type="radio"] {
+  appearance: none;
+}
+
+input[type="radio"]:checked + .tipBox  {
+  background-color: #FB7413;
+  color: #FFFFFF;
+}
+
+.numberOfPeopleContainer {
+  @include centeredSection;
+  margin-top: 20px;
+  input {
+    background-color: $light-blue-gray;
+    height: 35px;
+    width: 90%;
+    border: none;
+    border-radius: 10px;
+    text-align: end;
+    margin-left: 7px;
+    margin-top: 17px;
+    @include input;
+  }
+  img {
+    position: absolute;
+    top: 355px;
+    left: 30px;
+    height: 25px;
+  }
+}
+
+.resultsContainer {
+  width: 50%;
+}
+
+.totalDisplayContainer {
+  @include centeredSection;
+  background-color: $dark-green;
+  height: 250px;
+  border-radius: 10px;
+  color: $text-color;
+  padding: 20px;
+  gap: 20px;
+  &:hover{
+    background-color: $background-dark;
+    transition: 0.8s;
+  }
+}
+
+#tipPerPerson, #total {
+  color: $text-color;
+  font-size: 35px;
+  font-family: 'Arvo', serif;
+  font-weight: 700;
+}
+
+.tipDisplay {
+  img {
+    position: absolute;
+    height: 40px;
+    left: 540px;
+  }
+  @include displayAmount;
+}
+
+.totalDisplay {
+  img {
+    position: absolute;
+    height: 40px;
+    left: 540px;
+  }
+  @include displayAmount;
+}
+
+.tipText {
+  margin-top: 21px;
+}
+
+#error {
+ color: $outrageous-orange;
+  font-weight: 700;
+  left: 250px;
+  margin: 0;
+  transition: 0.8s;
+  position: absolute;
+
+}
+
+#reset {
+  background-color: $outrageous-orange;
+  color: $text-color;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 27px;
+  width: 350px;
+  height: 50px;
+  border:none;
+  border-radius: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: $background-dark;
+    transition: 0.5s;
+  }
+}
+
+input:invalid {
+  border: 2px solid $outrageous-orange;
+  background-color: $background-dark;
+  color: $outrageous-orange;
+  transition: 1s
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 450px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+
+}
+
+@media screen and (max-width: 700px) {
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  top: 60%;
+  width: 80vw;
+}
+
+  .bill {
+    width: auto;
+  }
+
+  .totalDisplayContainer {
+    width: auto;
+    margin: 8px;
+  }
+
+  .tipDisplay, .totalDisplay {
+    img {
+      left: 310px;
+      position: initial;
+    }
+  }
+  #reset {
+    width: 70vw;
+  }
+
+  .resultsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .numberOfPeopleContainer input {
+    width: 94%;
+  }
+  .reset {
+    justify-content: center;
+    display: flex;
+  }
+
+  footer {
+    margin-top: 800px;
+  }
+}

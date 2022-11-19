@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="./script.js" defer></script>
+    <title>Title</title>
+</head>
+<body class="body">
+<section class="header">
+    <div class="title">
+        <h1>SPLI</h1>
+        <div class="line"></div>
+        <h1>TTER</h1>
+    </div>
+    <div class="theme">
+    <button id="toggle">
+        <div>
+        <img id="toggleLight" src="assets/sun-8760.svg">
+        </div>
+        <div>
+        <img  src="assets/toggleDark.svg">
+        </div>
+    </button>
+    </div>
+</section>
+<section class="mainContainer">
+    <div class="bill">
+        <form id="form">
+            <div class="billAmountContainer">
+                <p>Bill amount</p>
+                <img src="assets/pound-2630.svg" alt="pound">
+                <div class="amountContainer">
+                    <label for="billAmount"></label>
+                    <input type="number" id="billAmount" name="billAmount" placeholder="enter amount" min="0" step=".01">
+                </div>
+            </div>
+            <div class="tipContainer">
+                <p>Select tip %</p>
+                <div class="tipOptionsContainer">
+                    <input type="radio" id="tip2" name="tip" value="1.02">
+                    <label class="tipBox" for="tip2">2% </label>
+                    <input type="radio" id="tip5" name="tip" value="1.05">
+                    <label class="tipBox" for="tip5">5% </label>
+                    <input type="radio" id="tip8" name="tip" value="1.08">
+                    <label class="tipBox" for="tip8">8% </label>
+                    <input type="radio" id="tip10" name="tip" value="1.10">
+                    <label class="tipBox" for="tip10">10% </label>
+                    <input type="radio" id="tip12" name="tip" value="1.12">
+                    <label class="tipBox" for="tip12">12% </label>
+                </div>
+                <div class="tipBoxCustom">
+                    <input type="number" id="tip" name="tip" placeholder="custom" min="1">
+                    <label for="tip"></label>
+                </div>
+            </div>
+            <div class="numberOfPeopleContainer">
+                <label for="numberOfPeople">Number of People </label>
+                <p id="error"></p>
+                <img src="assets/person-266.svg" alt="personIcon">
+                <input type="number" id="numberOfPeople" name="numberOfPeople" min="1" value="1" required>
+            </div>
+        </form>
+    </div>
+    <div class="resultsContainer">
+        <div class="totalDisplayContainer">
+            <div class="tipDisplay">
+                <p class="tipText">Tip / person</p>
+                <img src="assets/pound-2630.svg" alt="pound">
+                <p id="tipPerPerson">0.00</p>
+            </div>
+            <div class="totalDisplay">
+                <p>Total / person</p>
+                <img src="assets/pound-2630.svg" alt="pound">
+                <p id="total">0.00</p>
+            </div>
+        </div>
+        <div class="reset">
+            <button id="reset">RESET</button>
+        </div>
+    </div>
+
+</section>
+<footer>
+    <p>Coded by Nicolas Herbreteau</p>
+</footer>
+</body>
+</html>
