@@ -76,6 +76,9 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 10px;
 }
 
 .title {
