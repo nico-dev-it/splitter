@@ -36,11 +36,11 @@ function calculator() {
 }
 
 function customTip() {
-    const billAmount = document.getElementById("billAmount").value
+    const billAmount = document.getElementById("billAmount").value *1
     const numberOfPeople = document.getElementById("numberOfPeople").value
-    let customTip = document.getElementById("tip").value
-    let total = (((customTip * billAmount) / numberOfPeople).toFixed(2)) * 1
-    let tipAmount = (((customTip * billAmount) - billAmount) / numberOfPeople).toFixed(2)
+    let customTip = document.getElementById("tip").value/100
+    let tipAmount = ((customTip * billAmount) / numberOfPeople).toFixed(2)*1
+    let total = ((billAmount + tipAmount) / numberOfPeople).toFixed(2)*1
 
     if (numberOfPeople === "0") {
         error.textContent = "Can't be 0!"
