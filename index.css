@@ -5,6 +5,17 @@ body {
   font-weight: 400;
   color: #f2efea;
 }
+body a {
+  color: #fc7753;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: 1s;
+}
+body a:hover {
+  font-weight: 700;
+  color: #f2efea;
+  text-decoration-color: #f2efea;
+}
 
 .body.light {
   transition: 0.5s;
@@ -23,6 +34,9 @@ body {
 }
 .body.light .tipBox, .body.light .tipBoxCustom input, .body.light .totalDisplayContainer {
   background-color: #403d58;
+}
+.body.light .header {
+  background-color: transparent;
 }
 
 .theme button {
@@ -372,7 +386,7 @@ footer {
   }
   .header {
     top: 0;
-    z-index: 1;
+    z-index: -1;
     position: fixed;
   }
   .title, .theme {
@@ -380,6 +394,9 @@ footer {
   }
   .theme button {
     display: flex;
+  }
+  .body.light .theme button {
+    right: 10%;
   }
   footer {
     position: absolute;

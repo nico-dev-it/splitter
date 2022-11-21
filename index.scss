@@ -39,6 +39,19 @@ body {
   font-size: 15px;
   font-weight: 400;
   color: $text-color;
+  a {
+    color: $outrageous-orange;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: 1s;
+    &:hover {
+      font-weight: 700;
+      color: $text-color;
+      text-decoration-color: $text-color;
+
+    }
+  }
+
 }
 
 .body.light {
@@ -59,6 +72,9 @@ body {
   }
   .tipBox, .tipBoxCustom input, .totalDisplayContainer{
     background-color: $background-dark;
+  }
+  .header {
+    background-color: transparent;
   }
 }
 
@@ -389,7 +405,7 @@ footer {
   }
   .header {
     top: 0;
-    z-index: 1;
+    z-index: -1;
     position: fixed;
   }
   .title, .theme {
@@ -400,6 +416,9 @@ footer {
     button {
       display: flex;
     }
+  }
+  .body.light .theme button{
+    right: 10%;
   }
 
   footer {
