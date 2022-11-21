@@ -339,7 +339,7 @@ footer {
 .mainContainer {
   display: flex;
   flex-direction: column;
-  top: 71%;
+  top: 50%;
   width: 80vw;
 }
 
@@ -378,6 +378,7 @@ footer {
   }
 
   footer {
-    margin-top: 800px;
+    margin-top: 900px;
+    padding: 20px;
   }
 }

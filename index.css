@@ -40,6 +40,9 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 10px;
 }
 
 .title {
@@ -67,7 +70,7 @@ h1 {
   border-radius: 30px;
   width: 700px;
   position: absolute;
-  top: 40%;
+  margin-top: 30vh;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -328,7 +331,7 @@ footer {
   .mainContainer {
     display: flex;
     flex-direction: column;
-    top: 60%;
+    top: 50%;
     width: 80vw;
   }
   .bill {
@@ -359,7 +362,8 @@ footer {
     display: flex;
   }
   footer {
-    margin-top: 800px;
+    margin-top: 900px;
+    padding: 20px;
   }
 }
 
