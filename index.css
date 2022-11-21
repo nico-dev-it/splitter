@@ -40,9 +40,9 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  position: fixed;
   width: 100%;
   top: 10px;
+  background-color: #403d58;
 }
 
 .title {
@@ -364,6 +364,27 @@ footer {
   footer {
     margin-top: 900px;
     padding: 20px;
+  }
+}
+@media screen and (max-height: 500px) {
+  .mainContainer {
+    margin-top: 300px;
+  }
+  .header {
+    top: 0;
+    z-index: 1;
+    position: fixed;
+  }
+  .title, .theme {
+    margin-top: 5px;
+  }
+  .theme button {
+    display: flex;
+  }
+  footer {
+    position: absolute;
+    left: 300px;
+    top: 50px;
   }
 }
 
