@@ -13,14 +13,17 @@ toggleButton.addEventListener('click', () => {
 
 function calculator() {
     const billAmount = document.getElementById("billAmount").value
-    const regex = new RegExp("^0+(?!$)", 'g');
     const numberOfPeople = document.getElementById("numberOfPeople").value
     let tip = document.querySelector("input[type = 'radio']:checked").value
     let total = (((tip * billAmount) / numberOfPeople).toFixed(2)) * 1
-    let tipAmount = (((tip * billAmount) - billAmount) / numberOfPeople).toFixed(2)
+    let tipAmount = (((tip * billAmount) - billAmount) / numberOfPeople).toFixed(2) * 1
 
     if (numberOfPeople === "0") {
         error.textContent = "Can't be 0!"
+    }
+
+    if (tipAmount < 0) {
+        tipText.textContent = "0.00"
     }
 
     if (isNaN(total) || (total === Infinity)) {

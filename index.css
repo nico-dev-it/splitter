@@ -152,6 +152,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   background-color: #708b75;
   border-radius: 10px;
   color: #f2efea;
